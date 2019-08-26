@@ -89,13 +89,13 @@ int main(){
 }
 \end{verbatim}
 
-This program uses the provided {\tt my_list} implementation to create
+This program uses the provided {\tt my\_list} implementation to create
 a singly-linked list. This list should have four elements. Let's try to
 run this code and see what happens...
 
 \clearpage
 
-Start by compiling {\tt my_list.c} to an object file:
+Start by compiling {\tt my\_list.c} to an object file:
 \begin{verbatim}
 $ gcc -Wall -Werror -std=c99 -c my_list.c
 \end{verbatim}
@@ -168,7 +168,7 @@ Program received signal SIGSEGV, Segmentation fault.
 
 This is quite useful! GDB is able to provide us with the exact location
 in the our code where the crash occurred. We can see this is on line 31
-inside {\tt my_list.c}. This is part of the {\tt insert_node()} function.
+inside {\tt my\_list.c}. This is part of the {\tt insert\_node()} function.
  line marked in red means that the program crashed
 
 Let's set a breakpoint on this line. This will cause the program to hault
@@ -236,7 +236,7 @@ We can also now inspect the value of the variables:
 $1 = (my_list *) 0x0
 \end{verbatim}
 
-This means {\tt last} has type {\tt my_list *} and has value {\tt 0x0},
+This means {\tt last} has type {\tt my\_list *} and has value {\tt 0x0},
 which of course is NULL. So when we run line 31 it will try to dereference
 a NULL pointer! This is the cause of our crash.
 
@@ -247,7 +247,7 @@ Let's execute the next line anyway:
 Program terminated with signal SIGSEGV, Segmentation fault.
 \end{verbatim}
 
-Take a minute to open {\tt my_list.c} and fix the bug.  Once fixed,
+Take a minute to open {\tt my\_list.c} and fix the bug.  Once fixed,
 you should should see the following output:
 
 \begin{verbatim}
