@@ -85,7 +85,7 @@ step.
 
 We can now run the program\...
 
-``` {commandchars="\\\\\\{\\}"}
+``` {commandchars="\\\\\\{\\}<>"}
 (gdb) run
 Starting program: $USER/gdb-tutorial/example/main 
 Program received signal SIGSEGV, Segmentation fault.
