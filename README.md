@@ -85,21 +85,20 @@ step.
 
 We can now run the program\...
 
-``` {commandchars="\\\\\\{\\}<>"}
+``` {commandchars="\\\\\\{\\}"}
 (gdb) run
 Starting program: $USER/gdb-tutorial/example/main 
 Program received signal SIGSEGV, Segmentation fault.
-<span style="color:red">0x00005555555548f4 in insert_node (val=2, l=0x555555756260) at my_list.c:31<\span>
+0x00005555555548f4 in insert_node (val=2, l=0x555555756260) at my_list.c:31
 31     last->next = create_node(val);
 ```
 
 This is quite useful! GDB is able to provide us with the exact location
 in the our code where the crash occurred. We can see this is on line 31
-inside my\_list.c. This is part of the insert\_node() function. line
-marked in red means that the program crashed
+inside my\_list.c. This is part of the insert\_node() function.
 
 Let's set a breakpoint on this line. This will cause the program to
-hault *before* executing the code on line 31\...
+halt *before* executing the code on line 31\...
 
     (gdb) break my_list.c:31
     Breakpoint 1 at 0x8e3: file my_list.c, line 31.
